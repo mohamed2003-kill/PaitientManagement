@@ -21,7 +21,7 @@ L’application permet de gérer un annuaire de patients via une interface web i
 * Un champ de recherche permet de filtrer la liste par prénom ou nom (contient, insensible à la casse).
 * Appuyez sur la loupe ou la touche Entrée pour lancer la recherche.
 
-![Recherche de patients](./images/filter patient.PNG)
+![Recherche de patients](./images/filter\ patient.PNG)
 
 ### 1.3 Pagination
 
@@ -34,7 +34,7 @@ L’application permet de gérer un annuaire de patients via une interface web i
 
 * Cliquez sur le bouton **Nouveau Patient** pour accéder au formulaire de création.
 
-![Ajout d'un patient](./images/add new patient.PNG)
+![Ajout d'un patient](./images/add\ new\ patient.PNG)
 
 ### 1.5 Suppression d’un patient
 
@@ -55,7 +55,7 @@ L’application permet de gérer un annuaire de patients via une interface web i
 * Le formulaire utilise les annotations Bean Validation (`@NotBlank`, `@Email`).
 * En cas d’erreur (champ vide, format d’email invalide), les messages sont affichés sous chaque champ.
 
-![Validation du formulaire](./images/form validation.PNG)
+![Validation du formulaire](./images/form\ validation.PNG)
 
 ---
 
