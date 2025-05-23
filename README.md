@@ -34,7 +34,7 @@ L’application permet de gérer un annuaire de patients via une interface web i
 
 * Cliquez sur le bouton **Nouveau Patient** pour accéder au formulaire de création.
 
-![Ajout d'un patient]("./images/add%20new%20patient.PNG")
+![Ajout d'un patient](./images/add%20new%20patient.PNG)
 
 ### 1.5 Suppression d’un patient
 
