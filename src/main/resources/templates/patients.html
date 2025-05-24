@@ -1,0 +1,51 @@
+<div th:replace="fragments/header :: header(pageTitle='Patients')"></div>
+
+
+<h1>Patients</h1>
+
+<form th:action="@{/patients}" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="keyword" th:value="${keyword}" class="form-control" placeholder="Search…">
+        <button class="btn btn-outline-secondary">Search</button>
+    </div>
+</form>
+
+<a th:href="@{/patients/new}" class="btn btn-primary mb-3">New Patient</a>
+
+<table class="table table-striped">
+    <thead>
+    <tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${patients}">
+        <td th:text="${p.id}">1</td>
+        <td th:text="${p.firstName}">John</td>
+        <td th:text="${p.lastName}">Doe</td>
+        <td th:text="${p.email}">john@example.com</td>
+        <td>
+            <a th:href="@{'/patients/delete/' + ${p.id}}"
+               class="btn btn-sm btn-danger"
+               onclick="return confirm('Delete this patient?');">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination">
+        <li th:classappend="${currentPage == 1}? 'disabled'">
+            <a class="page-link" th:href="@{/patients(page=${currentPage - 1},keyword=${keyword})}">Prev</a>
+        </li>
+        <li th:each="i : ${#numbers.sequence(1, totalPages)}"
+            th:classappend="${i == currentPage}? 'active'">
+            <a class="page-link" th:href="@{/patients(page=${i},keyword=${keyword})}"
+               th:text="${i}">1</a>
+        </li>
+        <li th:classappend="${currentPage == totalPages}? 'disabled'">
+            <a class="page-link" th:href="@{/patients(page=${currentPage + 1},keyword=${keyword})}">Next</a>
+        </li>
+    </ul>
+</nav>
+</body>
+<div th:replace="fragments/footer :: footer"></div>
+</html>

@@ -1,4 +1,4 @@
-package com.example.paitientmanagement;
+package com.example.patientmanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

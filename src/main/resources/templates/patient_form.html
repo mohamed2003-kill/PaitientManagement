@@ -1,0 +1,31 @@
+<div th:replace="fragments/header :: header(pageTitle='Add new Patient')"></div>
+<h1 th:text="${patient} == null ? 'Edit Patient' : 'New Patient'"></h1>
+<form th:action="@{/patients/save}" th:object="${patient}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div class="mb-3">
+        <label>First Name</label>
+        <input class="form-control" th:field="*{firstName}" required/>
+        <div th:if="${#fields.hasErrors('firstName')}"
+             th:errors="*{firstName}"
+             class="text-danger small"></div>
+    </div>
+    <div class="mb-3">
+        <label>Last Name</label>
+        <input class="form-control" th:field="*{lastName}" required/>
+        <div th:if="${#fields.hasErrors('lastName')}"
+             th:errors="*{lastName}"
+             class="text-danger small"></div>
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input class="form-control" th:field="*{email}" type="email"/>
+        <div th:if="${#fields.hasErrors('email')}"
+             th:errors="*{email}"
+             class="text-danger small"></div>
+    </div>
+    <button class="btn btn-success">Save</button>
+    <a th:href="@{/patients}" class="btn btn-secondary">Cancel</a>
+</form>
+</body>
+<div th:replace="fragments/footer :: footer"></div>
+</html>
